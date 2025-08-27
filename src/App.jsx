@@ -8,6 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<TelaLogin />} />
+        <Route path="/" element={<TelaLogin />} />
       </Routes>
     </BrowserRouter>
   );
