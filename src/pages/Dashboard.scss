@@ -1,0 +1,108 @@
+/* Reset básico para remover margens padrão */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Container principal que organiza a sidebar e o conteúdo */
+.dashboard-container {
+  display: flex;
+  height: 100vh; /* Ocupa a altura total da tela */
+}
+
+/* ---- Sidebar (Barra Lateral) ---- */
+/* Antigo: flex w-52 flex-col bg-slate-600 p-4 shadow-lg */
+.sidebar {
+  width: 208px; /* Equivalente a w-52 */
+  background-color: #475569; /* bg-slate-600 */
+  padding: 1rem; /* p-4 */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+  color: white;
+}
+
+.sidebar-header {
+  padding: 1rem 0;
+  text-align: center;
+  margin-bottom: 2.5rem; /* mt-10 no ul */
+}
+
+.logo {
+  color: white;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: bold; /* font-bold */
+  text-decoration: none;
+}
+
+/* Antigo: text-center mt-10 space-y-3 */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space-y-3 */
+}
+
+/* ---- Links da Sidebar ---- */
+/* Antigo: block hover:bg-slate-400 p-3 cursor-pointer border rounded-xl text-white transition-all duration-300 ease-in-out shadow-md */
+.sidebar-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem; /* p-3 */
+  cursor: pointer;
+  border: 1px solid #64748b; /* border com cor do slate */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-md */
+  transition: all 300ms ease-in-out; /* transition-all duration-300 ease-in-out */
+}
+
+.sidebar-link:hover {
+  background-color: #94a3b8; /* hover:bg-slate-400 */
+}
+
+
+/* ---- Conteúdo Principal (à direita da sidebar) ---- */
+.main-content {
+  flex-grow: 1; /* Faz esta div ocupar todo o espaço restante */
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f5f9; /* Um fundo claro para o conteúdo */
+}
+
+
+/* ---- Navbar (Barra de Navegação Superior) ---- */
+/* Antigo: bg-gray-800 p-4 */
+.navbar {
+  background-color: #1f2937; /* bg-gray-800 */
+  padding: 1rem 3.5rem; /* p-4 e mx-14 (aprox) */
+  display: flex;
+  justify-content: flex-end; /* Alinha os links à direita */
+  align-items: center;
+}
+
+/* Antigo: space-x-4 */
+.nav-links {
+  display: flex;
+  gap: 1rem; /* space-x-4 */
+}
+
+/* Antigo: text-gray-300 hover:text-white */
+.nav-link {
+  color: #d1d5db; /* text-gray-300 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: white; /* hover:text-white */
+}
+
+/* ---- Área de Conteúdo abaixo da Navbar ---- */
+.content-area {
+  padding: 1.5rem;
+  overflow-y: auto; /* Adiciona scroll se o conteúdo for grande */
+}
