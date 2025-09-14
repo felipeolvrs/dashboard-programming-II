@@ -1,108 +1,269 @@
-/* Reset básico para remover margens padrão */
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
-
-/* Container principal que organiza a sidebar e o conteúdo */
-.dashboard-container {
+.login-page {
   display: flex;
-  height: 100vh; /* Ocupa a altura total da tela */
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* ---- Sidebar (Barra Lateral) ---- */
-/* Antigo: flex w-52 flex-col bg-slate-600 p-4 shadow-lg */
-.sidebar {
-  width: 208px; /* Equivalente a w-52 */
-  background-color: #475569; /* bg-slate-600 */
-  padding: 1rem; /* p-4 */
+.page-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.left-side {
+  flex: 1;
+  background: #f8fafc;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-  color: white;
+  padding: 2rem;
+  justify-content: space-between;
 }
 
-.sidebar-header {
-  padding: 1rem 0;
-  text-align: center;
-  margin-bottom: 2.5rem; /* mt-10 no ul */
+.logo-section {
+  flex: 0;
 }
 
 .logo {
-  color: white;
-  font-size: 1.125rem; /* text-lg */
-  font-weight: bold; /* font-bold */
-  text-decoration: none;
-}
-
-/* Antigo: text-center mt-10 space-y-3 */
-.sidebar-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem; /* space-y-3 */
-}
-
-/* ---- Links da Sidebar ---- */
-/* Antigo: block hover:bg-slate-400 p-3 cursor-pointer border rounded-xl text-white transition-all duration-300 ease-in-out shadow-md */
-.sidebar-link {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem; /* p-3 */
-  cursor: pointer;
-  border: 1px solid #64748b; /* border com cor do slate */
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-md */
-  transition: all 300ms ease-in-out; /* transition-all duration-300 ease-in-out */
-}
-
-.sidebar-link:hover {
-  background-color: #94a3b8; /* hover:bg-slate-400 */
-}
-
-
-/* ---- Conteúdo Principal (à direita da sidebar) ---- */
-.main-content {
-  flex-grow: 1; /* Faz esta div ocupar todo o espaço restante */
-  display: flex;
-  flex-direction: column;
-  background-color: #f1f5f9; /* Um fundo claro para o conteúdo */
-}
-
-
-/* ---- Navbar (Barra de Navegação Superior) ---- */
-/* Antigo: bg-gray-800 p-4 */
-.navbar {
-  background-color: #1f2937; /* bg-gray-800 */
-  padding: 1rem 3.5rem; /* p-4 e mx-14 (aprox) */
-  display: flex;
-  justify-content: flex-end; /* Alinha os links à direita */
   align-items: center;
+  gap: 0.75rem;
 }
 
-/* Antigo: space-x-4 */
-.nav-links {
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.content-section {
+  flex: 1;
   display: flex;
-  gap: 1rem; /* space-x-4 */
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
 }
 
-/* Antigo: text-gray-300 hover:text-white */
-.nav-link {
-  color: #d1d5db; /* text-gray-300 */
+.main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.brand-name {
+  color: #6366f1;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.register-link {
+  color: #6366f1;
   text-decoration: none;
-  transition: color 0.2s;
+  font-weight: 500;
 }
 
-.nav-link:hover {
-  color: white; /* hover:text-white */
+.register-link:hover {
+  text-decoration: underline;
 }
 
-/* ---- Área de Conteúdo abaixo da Navbar ---- */
-.content-area {
-  padding: 1.5rem;
-  overflow-y: auto; /* Adiciona scroll se o conteúdo for grande */
+.illustration {
+  flex: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.person-icon {
+  width: 160px;
+  height: 200px;
+}
+
+.right-side {
+  flex: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  background: #f9fafb;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+}
+
+.input-field::placeholder {
+  color: #9ca3af;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.forgot-password a {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.login-button:hover {
+  background: #5855eb;
+}
+
+.divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.divider span {
+  background: white;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.social-login {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+.social-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.facebook {
+  color: #1877f2;
+}
+
+.apple {
+  color: #000000;
+}
+
+.google svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .left-side {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .right-side {
+    padding: 1rem;
+  }
+
+  .login-form {
+    max-width: 100%;
+  }
 }

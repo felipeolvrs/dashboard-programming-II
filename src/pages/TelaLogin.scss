@@ -1,0 +1,262 @@
+$primary: #4a3aff;
+$secondary: #1b1f24;
+$light-bg: #d8e0fe;
+$white: #fff;
+$gray-text: #555;
+$dark-gray: #2c2f33;
+$error-red: #ff4757;
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.auth-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.auth-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 40px;
+  position: relative;
+  padding: 6rem;
+  margin-left: 60px;
+}
+
+.logo-container {
+  height: 70px;
+  width: 70px;
+margin-left: 20px;
+  .logo {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.content-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -90px;
+  z-index: 10;
+
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $secondary;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .brand-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+
+    .meu {
+      color: $primary;
+    }
+
+    .gestor {
+      color: $secondary;
+    }
+  }
+
+  .description {
+    font-size: 1rem;
+    color: $gray-text;
+    line-height: 1.6;
+
+    .link-button {
+      background: none;
+      border: none;
+      color: $primary;
+      font-weight: bold;
+      font-size: inherit;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+      transition: color 0.2s;
+
+      &:hover {
+        color: darken($primary, 10%);
+      }
+    }
+  }
+}
+
+.character-container {
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+
+  .character-image {
+    width: 200px;
+    height: auto;
+  }
+}
+
+.auth-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  padding: 6rem;
+  background: rgba(248, 249, 250, 0.5);
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+
+  .form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $secondary;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .error-message {
+    background: lighten($error-red, 40%);
+    color: $error-red;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .form-input {
+    padding: 16px;
+    border: none;
+    background: $light-bg;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &:focus {
+      background: darken($light-bg, 5%);
+      box-shadow: 0 0 0 2px rgba($primary, 0.2);
+    }
+
+    &::placeholder {
+      color: rgba($secondary, 0.6);
+    }
+  }
+
+  .forgot-password {
+    text-align: right;
+    font-size: 0.9rem;
+    color: $primary;
+    cursor: pointer;
+    margin-top: -8px;
+    margin-bottom: 8px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .submit-button {
+    padding: 16px;
+    background: $primary;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+
+    &:hover {
+      background: darken($primary, 5%);
+      transform: translateY(-1px);
+    }
+  }
+
+  .divider-text {
+    text-align: center;
+    font-size: 14px;
+    color: $secondary;
+    margin: 16px 0 8px 0;
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      border-radius: 8px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+    height: auto;
+    margin: 20px;
+  }
+
+  .auth-left {
+    padding: 40px 20px 20px 20px;
+    min-height: 300px;
+
+    .content-text {
+      margin-top: 0;
+
+      .main-title {
+        font-size: 2rem;
+      }
+
+      .brand-title {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .character-container {
+    display: none;
+  }
+
+  .auth-right {
+    padding: 20px;
+    background: none;
+  }
+
+  .form-container {
+    max-width: none;
+  }
+}
