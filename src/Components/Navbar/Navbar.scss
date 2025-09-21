@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 1rem 0.5rem 0.5rem  2rem ;
+  padding: 1rem 0.5rem 0.5rem 2rem;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -70,7 +70,8 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+  padding-right: 2rem;
 }
 
 .notification-btn {
@@ -156,7 +157,7 @@
   min-width: 160px;
   z-index: 1000;
   overflow: hidden;
-  
+
   hr {
     margin: 0;
     border: none;

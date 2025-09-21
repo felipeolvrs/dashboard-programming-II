@@ -1,6 +1,6 @@
 import React from "react";
-import { Aside } from "../Components/Aside/Aside";
-import { Navbar } from "../Components/Navbar";
+import { Aside } from "../../Components/Aside/Aside";
+import { Navbar } from "../../Components/Navbar/Navbar";
 import "./Dashboard.scss";
 
 export function Dashboard() {

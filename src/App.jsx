@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './styles/global.scss';
-import { TelaLogin } from "./pages/TelaLogin";
-import {Dashboard} from "./pages/Dashboard"
-import { MenuProduto } from "./pages/MenuProduto"
+import "./styles/global.scss";
+import { TelaLogin } from "./pages/Login/TelaLogin";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { MenuProduto } from "./pages/Produtos/MenuProduto";
 
 function App() {
   return (

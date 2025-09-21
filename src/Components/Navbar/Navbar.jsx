@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { authService } from "../../libs/service/AuthService";
 import "./Navbar.scss";
 
 export function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const user = authService.getUser();
+  const userName = user?.nomeUsuario || user?.name || "Usuário";
+
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+
+  const handleLogout = () => {
+    authService.logout();
+    navigate("/");
   };
 
   return (
@@ -17,8 +25,9 @@ export function Navbar() {
           alt="Usuário"
           className="user-avatar"
         />
-        <span className="user-greeting">Olá, Usuário</span>
+        <span className="user-greeting">Olá, {userName}</span>
       </div>
+
       <div className="navbar-center">
         <div className="search-box">
           <svg
@@ -37,14 +46,18 @@ export function Navbar() {
           <input type="text" placeholder="Buscar..." className="search-input" />
         </div>
       </div>
+
       <div className="navbar-right">
+        <div>
+          <img
+            src="https://via.placeholder.com/30x30/10b981/ffffff?text=M"
+            alt="Menu"
+            className="menu-avatar"
+          />
+        </div>
         <div className="dropdown">
-          <button className="dropdown-btn" onClick={toggleDropdown}>
-            <img
-              src="https://via.placeholder.com/30x30/10b981/ffffff?text=M"
-              alt="Menu"
-              className="menu-avatar"
-            />
+          <button className="dropdown-btn label-btn" onClick={toggleDropdown}>
+            Delicious Burguer
             <svg
               className={`dropdown-arrow ${isDropdownOpen ? "rotated" : ""}`}
               fill="none"
@@ -69,11 +82,13 @@ export function Navbar() {
                 Configurações
               </Link>
               <hr />
-              <button className="dropdown-item logout">Sair</button>
+              <button className="dropdown-item logout" onClick={handleLogout}>
+                Sair
+              </button>
             </div>
           )}
         </div>
-        <label htmlFor="">Delicious Burguer</label>
+
         <button className="notification-btn">
           <svg
             className="notification-icon"
