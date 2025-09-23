@@ -3,6 +3,7 @@ import { authService } from "./AuthService";
 const API_URL = "https://api-node-test-6c4b0a5d4c87.herokuapp.com/products";
 
 export const ProductService = {
+  
   async getProducts() {
     const token = authService.getToken();
     const res = await fetch(API_URL, {

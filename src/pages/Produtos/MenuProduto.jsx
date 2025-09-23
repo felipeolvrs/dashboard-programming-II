@@ -40,6 +40,24 @@ export function MenuProduto() {
     alert(`Mais opções para: ${produto.name}`);
   };
 
+  // Função para formatar o preço de forma segura
+  const formatPrice = (price) => {
+    if (price === null || price === undefined || isNaN(price)) {
+      return "N/A";
+    }
+    return `R$ ${Number(price).toFixed(2)}`;
+  };
+
+  // Função para formatar a data de forma segura
+  const formatDate = (date) => {
+    if (!date) return "N/A";
+    try {
+      return new Date(date).toLocaleDateString("pt-BR");
+    } catch {
+      return "Data inválida";
+    }
+  };
+
   if (loading) return <p>Carregando produtos...</p>;
   if (error) return <p>{error}</p>;
 
@@ -65,15 +83,13 @@ export function MenuProduto() {
                 <tbody>
                   {produtos.map((produto) => (
                     <tr key={produto.id}>
-                      <td className="produto-nome">{produto.name}</td>
-                      <td className="produto-marca">{produto.brand}</td>
+                      <td className="produto-nome">{produto.name || "N/A"}</td>
+                      <td className="produto-marca">{produto.brand || "N/A"}</td>
                       <td className="produto-preco">
-                        R$ {produto.price.toFixed(2)}
+                        {formatPrice(produto.price)}
                       </td>
                       <td className="produto-validade">
-                        {new Date(produto.expirationDate).toLocaleDateString(
-                          "pt-BR"
-                        )}
+                        {formatDate(produto.expirationDate)}
                       </td>
                       <td className="produto-actions">
                         <div className="action-buttons">
